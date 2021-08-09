@@ -19,6 +19,11 @@ class MockFirebaseAuth implements FirebaseAuth {
   }
 
   @override
+  Stream<User?> idTokenChanges() {
+    return stateChangedStreamController.stream;
+  }
+
+  @override
   User? get currentUser {
     return _currentUser;
   }
